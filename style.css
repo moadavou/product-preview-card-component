@@ -1,0 +1,116 @@
+:root {
+  --clr-primary-cyan: hsl(158, 36%, 37%);
+  --clr-primary-cream: hsl(30, 38%, 92%);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-500: hsl(228, 12%, 48%);
+  --clr-neutral-900: hsl(212, 21%, 14%);
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+
+  --fs-xs: 0.75rem;
+  --fs-s: 0.8125rem;
+  --fs-m: 0.875rem;
+  --fs-l: 2rem;
+
+  --ff-body: Fraunces, serif;
+  --ff-heading: Montserrat, sans-serif;
+
+  --border-radius-s: 0.5rem;
+  --border-radius-m: 0.625rem;
+}
+
+/* CSS reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Utlity classes */
+
+.text-primary-cyan {
+  color: var(--clr-primary-cyan);
+}
+.text-primary-cream {
+  color: var(--clr-primary-cream);
+}
+.text-neutral-100 {
+  color: var(--clr-neutral-100);
+}
+.text-neutral-500 {
+  color: var(--clr-neutral-500);
+}
+.text-neutral-900 {
+  color: var(--clr-neutral-900);
+}
+
+.bg-primary-cyan {
+  color: var(--clr-primary-cyan);
+}
+.bg-primary-cream {
+  color: var(--clr-primary-cream);
+}
+.bg-neutral-100 {
+  color: var(--clr-neutral-100);
+}
+.bg-neutral-500 {
+  color: var(--clr-neutral-500);
+}
+.bg-neutral-900 {
+  color: var(--clr-neutral-900);
+}
+
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.ff-heading {
+  font-family: var(--ff-heading);
+}
+
+.border-radius-s {
+  border-radius: var(--border-radius-s);
+}
+.border-radius-m {
+  border-radius: var(--border-radius-m);
+}
+
+:where(.flow > :not(:first-child)) {
+  margin-top: var(--flow-spacer, 1em);
+}
+
+/* General styling */
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-m);
+  font-weight: var(--fw-regular);
+  color: var(--clr-neutral-500);
+}
+/* Attribution */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
