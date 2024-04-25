@@ -1,4 +1,5 @@
 :root {
+  --clr-primary-hover: hsl(156, 42%, 18%);
   --clr-primary-cyan: hsl(158, 36%, 37%);
   --clr-primary-cream: hsl(30, 38%, 92%);
 
@@ -11,8 +12,8 @@
 
   --fs-xs: 0.75rem;
   --fs-s: 0.8125rem;
-  --fs-m: 0.875rem;
-  --fs-l: 2rem;
+  --fs-m: clamp(0.76rem, 1vw + 1rem, 0.875rem);
+  --fs-l: clamp(1.8rem, 2vw + 1rem, 2rem);
 
   --ff-body: Montserrat, sans-serif;
   --ff-heading: Fraunces, serif;
@@ -56,12 +57,6 @@ svg {
 .text-primary-cyan {
   color: var(--clr-primary-cyan);
 }
-.text-primary-cream {
-  color: var(--clr-primary-cream);
-}
-.text-neutral-100 {
-  color: var(--clr-neutral-100);
-}
 .text-neutral-500 {
   color: var(--clr-neutral-500);
 }
@@ -77,12 +72,6 @@ svg {
 }
 .bg-neutral-100 {
   background-color: var(--clr-neutral-100);
-}
-.bg-neutral-500 {
-  background-color: var(--clr-neutral-500);
-}
-.bg-neutral-900 {
-  background-color: var(--clr-neutral-900);
 }
 
 .fw-regular {
@@ -136,6 +125,13 @@ svg {
   color: var(--clr-neutral-100);
   border-radius: var(--border-radius-s);
   gap: 1em;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--clr-primary-hover);
 }
 
 .grid {
@@ -150,10 +146,66 @@ body {
   font-weight: var(--fw-regular);
   color: var(--clr-neutral-500);
   background-color: var(--clr-primary-cream);
+  line-height: 1.5;
+}
+
+section {
+  border-radius: var(--border-radius-m);
+  margin-inline: 1rem;
+  margin-block: 1.75rem;
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  line-height: 1.1;
+}
+
+.c-product-card__img img {
+  border-top-left-radius: var(--border-radius-m);
+  border-top-right-radius: var(--border-radius-m);
+}
+
+.c-product-card__text {
+  align-content: center;
+  padding: 1.56rem;
+}
+
+.prices {
+  display: flex;
+  align-items: center;
 }
 
 .prices del {
   margin-inline: 1rem;
+}
+
+/* Media queries */
+
+@media (min-width: 48rem) {
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+  }
+
+  section {
+    max-width: 37.5rem;
+  }
+
+  section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .c-product-card__img img {
+    border-top-right-radius: 0;
+    border-top-left-radius: var(--border-radius-m);
+    border-bottom-left-radius: var(--border-radius-m);
+  }
+
+  .c-product-card__text {
+    padding: 2rem;
+  }
 }
 
 /* Attribution */
