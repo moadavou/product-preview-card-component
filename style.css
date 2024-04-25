@@ -14,8 +14,8 @@
   --fs-m: 0.875rem;
   --fs-l: 2rem;
 
-  --ff-body: Fraunces, serif;
-  --ff-heading: Montserrat, sans-serif;
+  --ff-body: Montserrat, sans-serif;
+  --ff-heading: Fraunces, serif;
 
   --border-radius-s: 0.5rem;
   --border-radius-m: 0.625rem;
@@ -43,6 +43,16 @@ svg {
 
 /* Utlity classes */
 
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 .text-primary-cyan {
   color: var(--clr-primary-cyan);
 }
@@ -60,19 +70,19 @@ svg {
 }
 
 .bg-primary-cyan {
-  color: var(--clr-primary-cyan);
+  background-color: var(--clr-primary-cyan);
 }
 .bg-primary-cream {
-  color: var(--clr-primary-cream);
+  background-color: var(--clr-primary-cream);
 }
 .bg-neutral-100 {
-  color: var(--clr-neutral-100);
+  background-color: var(--clr-neutral-100);
 }
 .bg-neutral-500 {
-  color: var(--clr-neutral-500);
+  background-color: var(--clr-neutral-500);
 }
 .bg-neutral-900 {
-  color: var(--clr-neutral-900);
+  background-color: var(--clr-neutral-900);
 }
 
 .fw-regular {
@@ -82,8 +92,26 @@ svg {
   font-weight: var(--fw-bold);
 }
 
+.fs-xs {
+  font-size: var(--fs-xs);
+}
+.fs-s {
+  font-size: var(--fs-s);
+}
+.fs-m {
+  font-size: var(--fs-m);
+}
+.fs-l {
+  font-size: var(--fs-l);
+}
+
 .ff-heading {
   font-family: var(--ff-heading);
+}
+.ribbon-text {
+  font-size: var(--fs-xs);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
 }
 
 .border-radius-s {
@@ -94,7 +122,24 @@ svg {
 }
 
 :where(.flow > :not(:first-child)) {
-  margin-top: var(--flow-spacer, 1em);
+  margin-top: var(--flow-spacer, 1rem);
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  padding-block: 1.1em;
+  width: 100%;
+  background-color: var(--clr-primary-cyan);
+  color: var(--clr-neutral-100);
+  border-radius: var(--border-radius-s);
+  gap: 1em;
+}
+
+.grid {
+  display: grid;
 }
 
 /* General styling */
@@ -104,12 +149,19 @@ body {
   font-size: var(--fs-m);
   font-weight: var(--fw-regular);
   color: var(--clr-neutral-500);
+  background-color: var(--clr-primary-cream);
 }
+
+.prices del {
+  margin-inline: 1rem;
+}
+
 /* Attribution */
 
 .attribution {
   font-size: 11px;
   text-align: center;
+  margin: 1rem;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);

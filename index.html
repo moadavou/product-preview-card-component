@@ -8,23 +8,54 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
+      href="./images/favicon-32x32.png" />
     <link rel="stylesheet" href="style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
 
     <title>Frontend Mentor | Product preview card component</title>
   </head>
   <body>
-    Perfume Gabrielle Essence Eau De Parfum A floral, solar and voluptuous
-    interpretation composed by Olivier Polge, Perfumer-Creator for the House of
-    CHANEL. $149.99 $169.99 Add to Cart
+    <main>
+      <section class="grid flow bg-neutral-100">
+        <div>
+          <picture>
+            <source
+              media="(min-width: 48rem)"
+              srcset="images/image-product-desktop.jpg" />
+            <img
+              src="images/image-product-mobile.jpg"
+              alt="A bottle of Gabrielle Essence Eau De Parfum lays on a white surface between two leafy stems." />
+          </picture>
+        </div>
+        <div class="flow">
+          <hgroup class="flow">
+            <p class="ribbon-text">Perfume</p>
+            <h1 class="fs-l ff-heading fw-bold text-neutral-900">
+              Perfume Gabrielle Essence Eau De Parfum
+            </h1>
+          </hgroup>
+          <p>
+            A floral, solar and voluptuous interpretation composed by Olivier
+            Polge, Perfumer-Creator for the House of CHANEL.
+          </p>
+          <p class="prices flow-spacer" style="--flow-spacer: 1.25rem">
+            <span class="ff-heading text-primary-cyan fs-l">$149.99</span>
+            <del><span class="visually-hidden">Old price: </span>$169.99</del>
+          </p>
+          <button type="button" class="button">
+            <img src="images/icon-cart.svg" alt="" />
+            <span aria-label="Add to cart - Gabrielle Essencce Eau De Parfum"
+              >Add to Cart</span
+            >
+          </button>
+        </div>
+      </section>
+    </main>
 
     <footer class="attribution">
       Challenge by
