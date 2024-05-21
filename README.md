@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshot.png)
 
 ### Links
 
@@ -46,7 +46,7 @@ Users should be able to:
 
 ### What I learned
 
-For this project, I continued working with **utility classes** and began learning about the **CUBE CSS methodology**. It's still very new to me, so keep your expectations low.
+For this project, I continued working with **utility classes** and began learning more about the **CUBE CSS methodology**. It's still very new to me, so keep your expectations low.
 
 **I also learned...**
 
@@ -63,6 +63,7 @@ I want to continue to develop and learn about the **CUBE CSS methodology** and u
 ### Useful resources
 
 - [How to plan your HTML (1): Product Preview Card](https://fedmentor.dev/posts/html-plan-product-preview/) - This article goes through the steps to complete this challenge with accessibility in mind.
+- [Video tutorial on one way to tackle this challenge](https://youtu.be/B2WL6KkqhLQ?si=XE2p7ou9dBkipU5f) - After completing the challenge, I reviewed Kevin Powell's solution. I enjoy reviewing code from more experienced developers to learn different approaches and techniques.
 
 ## Author
 

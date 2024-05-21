@@ -10,16 +10,15 @@
   --fw-regular: 500;
   --fw-bold: 700;
 
-  --fs-xs: 0.75rem;
-  --fs-s: 0.8125rem;
-  --fs-m: clamp(0.76rem, 1vw + 1rem, 0.875rem);
-  --fs-l: clamp(1.8rem, 2vw + 1rem, 2rem);
+  --fs-s: 0.75rem;
+  --fs-m: 0.875rem;
+  --fs-l: 2rem;
 
   --ff-body: Montserrat, sans-serif;
   --ff-heading: Fraunces, serif;
 
-  --border-radius-s: 0.5rem;
-  --border-radius-m: 0.625rem;
+  --border-radius-s: 8px;
+  --border-radius-m: 10px;
 }
 
 /* CSS reset */
@@ -81,9 +80,6 @@ svg {
   font-weight: var(--fw-bold);
 }
 
-.fs-xs {
-  font-size: var(--fs-xs);
-}
 .fs-s {
   font-size: var(--fs-s);
 }
@@ -98,8 +94,8 @@ svg {
   font-family: var(--ff-heading);
 }
 .ribbon-text {
-  font-size: var(--fs-xs);
-  letter-spacing: 0.3em;
+  font-size: var(--fs-s);
+  letter-spacing: 0.36em;
   text-transform: uppercase;
 }
 
@@ -119,14 +115,16 @@ svg {
   align-items: center;
   justify-content: center;
   border: 0;
-  padding-block: 1.1em;
+  padding-block: 1rem;
   width: 100%;
   background-color: var(--clr-primary-cyan);
   color: var(--clr-neutral-100);
   border-radius: var(--border-radius-s);
+  font-size: var(--fs-m);
   gap: 1em;
   transition: background-color 0.3s ease-in-out;
   cursor: pointer;
+  --flow-spacer: 1.25rem;
 }
 
 .button:hover,
@@ -146,18 +144,18 @@ body {
   font-weight: var(--fw-regular);
   color: var(--clr-neutral-500);
   background-color: var(--clr-primary-cream);
-  line-height: 1.5;
+  line-height: 1.64;
 }
 
-section {
+.card {
   border-radius: var(--border-radius-m);
   margin-inline: 1rem;
   margin-block: 1.75rem;
-  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
 }
 
 h1 {
   line-height: 1;
+  --flow-spacer: 0.75rem;
 }
 
 .c-product-card__img {
@@ -169,32 +167,19 @@ h1 {
   border-top-right-radius: var(--border-radius-m);
 }
 
-.c-product-card__img::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0)
-  );
-}
-
 .c-product-card__text {
   align-content: center;
-  padding: 1.56rem;
+  padding: 1.5rem;
 }
 
 .prices {
   display: flex;
   align-items: center;
+  --flow-spacer: 1.25rem;
 }
 
 .prices del {
-  margin-inline: 1rem;
+  margin-inline: 1.19rem;
 }
 
 /* Media queries */
@@ -204,14 +189,19 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100dvh;
+    min-height: 100vh;
   }
 
-  section {
+  :where(.flow > :not(:first-child)) {
+    margin-top: var(--flow-spacer, 1.35rem);
+  }
+
+  h1 {
+    --flow-spacer: 1rem;
+  }
+
+  .card {
     max-width: 37.5rem;
-  }
-
-  section {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -229,7 +219,7 @@ h1 {
 /* Attribution */
 
 .attribution {
-  font-size: 11px;
+  font-size: 0.7rem;
   text-align: center;
   margin: 1rem;
 }
